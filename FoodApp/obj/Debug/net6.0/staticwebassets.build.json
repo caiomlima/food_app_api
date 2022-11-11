@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "ygKBYs6sYhF3kSxcABt8ws4RVDsC+Wxl8oF2VQrHCB8=",
-  "Source": "FoodApp",
-  "BasePath": "_content/FoodApp",
+  "Hash": "llrbuzIYQAIzOVzCT1dMYbgtako286gVg/Pj7offB04=",
+  "Source": "Api",
+  "BasePath": "_content/Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

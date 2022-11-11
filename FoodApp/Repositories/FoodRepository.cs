@@ -2,6 +2,7 @@
 using FoodApp.DTO.Request;
 using FoodApp.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Threading;
 using System.Xml;
 
 namespace FoodApp.Repositories
@@ -20,9 +21,9 @@ namespace FoodApp.Repositories
             return await Ctx.Food.AsNoTracking().ToListAsync();
         }
 
-        public async Task<List<Food>> GetByTypeAsync(long id)
+        public async Task<List<Food>> GetByTypeAsync(long id, CancellationToken cancellationToken)
         {
-            return await Ctx.Food.Where(x => ((long)x.FoodType) == id).AsNoTracking().ToListAsync();
+            return await Ctx.Food.Where(x => ((long)x.FoodType) == id).AsNoTracking().ToListAsync(cancellationToken);
         }
 
         public async Task<Food> GetByIdAsync(long id)
@@ -30,15 +31,24 @@ namespace FoodApp.Repositories
             return await Ctx.Food.SingleAsync(x => x.Id == id);
         }
 
-        public async Task SaveAsync()
+        public async Task CreateAsync(Food food, CancellationToken cancellationToken)
         {
+            await Ctx.AddAsync(food, cancellationToken);
             await Ctx.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(long id)
+        public async Task UpdateAsync(Food food)
         {
-            Food food = await Ctx.Food.SingleAsync(x => x.Id == id);
+            Ctx.Update(food);
+            await Ctx.SaveChangesAsync();
+        }
+
+        public async Task<bool> DeleteAsync(long id, CancellationToken cancellationToken)
+        {
+            var food = await Ctx.Food.SingleAsync(x => x.Id == id);
             Ctx.Remove(food);
+
+            return (await Ctx.SaveChangesAsync(cancellationToken)) > 0;
         }
     }
 }

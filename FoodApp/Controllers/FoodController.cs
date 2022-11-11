@@ -17,52 +17,94 @@ namespace FoodApp.Controllers
             _foodCrudService = foodCrudService;
         }
 
-        [HttpGet]
+        [HttpGet("all")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> GetAllFoodsAsync()
+        public async Task<IActionResult> GetAllFoodsAsync(CancellationToken cancellationToken)
         {
-            return null;
+            var response = await _foodCrudService.GetAllAsync(cancellationToken);
+
+            if (response == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(response);
         }
 
-        [HttpGet]
+        [HttpGet("all-by-type/{typeId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> GetAllFooddByTypeAsync([FromRoute] long id)
+        public async Task<IActionResult> GetAllFooddByTypeAsync([FromRoute] long typeId, CancellationToken cancellationToken)
         {
-            return null;
+            var response = await _foodCrudService.GetByTypeAsync(typeId, cancellationToken);
+
+            if (response == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(response);
         }
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> GetFoodByIdAsync([FromRoute] long id)
+        public async Task<IActionResult> GetFoodByIdAsync([FromRoute] long id, CancellationToken cancellationToken)
         {
-            return null;
+            var response = await _foodCrudService.GetByIdAsync(id, cancellationToken);
+
+            if (response == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(response);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> CreateFoodAsync([FromBody] CreateFoodRequestDto inputModel)
+        public async Task<IActionResult> CreateFoodAsync([FromBody] CreateFoodRequestDto inputModel, CancellationToken cancellationToken)
         {
-            return null;
+            var response = await _foodCrudService.CreateAsync(inputModel, cancellationToken);
+
+            if (response == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(response);
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateFoodInformationAsync([FromRoute] long id, UpdateFoodRequestDto inputModel)
+        public async Task<IActionResult> UpdateFoodInformationAsync([FromRoute] long id, [FromBody] UpdateFoodRequestDto inputModel, CancellationToken cancellationToken)
         {
-            return null;
+            var response = await _foodCrudService.UpdateAsync(id, inputModel, cancellationToken);
+
+            if(response == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(response);
         }
 
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> DeleteFoodAsync([FromRoute] long id)
+        public async Task<IActionResult> DeleteFoodAsync([FromRoute] long id, CancellationToken cancellationToken)
         {
-            return null;
+            var response = await _foodCrudService.DeleteAsync(id, cancellationToken);
+
+            if (response == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(response);
         }
     }
 }

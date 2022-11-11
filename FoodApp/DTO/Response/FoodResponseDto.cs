@@ -1,5 +1,6 @@
 ﻿using FoodApp.Commons;
 using FoodApp.Entities;
+using static FoodApp.Entities.Food;
 
 namespace FoodApp.DTO.Response
 {
@@ -8,7 +9,7 @@ namespace FoodApp.DTO.Response
         public long Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public FoodType FoodType { get; set; }
+        public TypeOfFood FoodType { get; set; }
 
         public static explicit operator FoodResponseDto(Food entity)
         {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aK9BPz9eoI6A7Rcv33v5aZgrSKU8d8uHzZ6VTPyqeKA0ay99jabEiPmIaA+7RBqg1WbZhw/xn/bh8dl1O4JN+A==",
+  "dgSpecHash": "gog4w5y3vx/9XHtp9Hr8OL76+QGqIw8G6ddZqRCl/xeF0Y0tbGr/zxoXfWLF9YT6kxHfNqYdAb13WskC45YQBg==",
   "success": true,
-  "projectFilePath": "F:\\Development\\.NET - ASP.NET\\Meus Projetos\\FoodApp\\FoodApp\\FoodApp.csproj",
+  "projectFilePath": "F:\\Development\\.NET - ASP.NET\\Meus Projetos\\food_app\\FoodApp\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\M3iEX\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\M3iEX\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -40,6 +40,8 @@
     "C:\\Users\\M3iEX\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\M3iEX\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\M3iEX\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
+    "C:\\Users\\M3iEX\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\M3iEX\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\M3iEX\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.2\\pomelo.entityframeworkcore.mysql.6.0.2.nupkg.sha512",
     "C:\\Users\\M3iEX\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\M3iEX\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
